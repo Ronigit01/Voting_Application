@@ -19,11 +19,6 @@ module.exports.registerController = async (req, res) => {
         //     }
         // }
 
-        const error = validatedata({ name, email, aadhar, password })
-        if (error) {
-            res.status(400).send("invalid credentials")
-        } else {
-
             const user = await userModel.findOne({ email: email })
 
             if (user) return res.status(400).send("user already exits! please login")
@@ -48,7 +43,7 @@ module.exports.registerController = async (req, res) => {
 
                 })
             })
-        }
+        
 
 
     } catch (err) {
