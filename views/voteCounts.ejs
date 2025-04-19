@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vote Counts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gradient-to-br from-green-800 to-gray-900 text-white min-h-screen font-sans">
+
+  <!-- Navigation -->
+  <div
+    class="flex flex-col md:flex-row md:justify-between md:items-center px-4 md:px-10 py-5 gap-5 md:gap-0 border-b border-white/20">
+    <div class="flex flex-row gap-4 md:gap-10 text-sm md:text-lg font-medium justify-center items-center">
+      <a href="/profile" class="border-b-2 border-transparent hover:border-white transition">Personal Info</a>
+      <a href="/candidates" class="border-b-2 border-transparent hover:border-white transition">Candidates</a>
+      <a href="/vote/counts" class="border-b-2 border-white pb-1">Vote Counts</a>
+      <% if (user.role==="voter" ) { %>
+        <a href="/vote/panel" class="border-b-2 border-transparent hover:border-white transition">Voting Panel</a>
+        <% } %>
+
+    </div>
+    <div class="flex gap-4 justify-center">
+      <a href="/profile" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">← Back to Profile</a>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <header class="mt-10 text-center">
+    <h1 class="text-4xl font-bold text-white">Live Vote Count</h1>
+    <p class="text-gray-300 mt-2 text-lg">Real-time tally of votes per candidate.</p>
+  </header>
+
+  <!-- Vote Count Table -->
+  <div class="max-w-4xl mx-auto mt-12 px-4">
+    <div class="overflow-x-auto rounded-xl shadow-lg bg-white/5 backdrop-blur-md border border-white/10">
+      <table class="min-w-full text-left text-white">
+        <thead class="bg-white/10 border-b border-white/10">
+          <tr>
+            <th class="px-6 py-4 font-semibold">Candidate Name</th>
+            <th class="px-6 py-4 font-semibold">Party</th>
+            <th class="px-6 py-4 font-semibold">Votes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% candidates.forEach(candidate=> { %>
+            <tr class="border-b border-white/10 hover:bg-white/10 transition">
+              <td class="px-6 py-4">
+                <%= candidate.name %>
+              </td>
+              <td class="px-6 py-4 text-blue-300">
+                <%= candidate.party %>
+              </td>
+              <td class="px-6 py-4 font-bold text-green-400">
+                <%= candidate.voteCount %>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-16 text-sm text-gray-400">
+    <p>Vote counts are updated in real time. Data is accurate and confidential.</p>
+    <p class="mt-1">© <%= new Date().getFullYear() %> National Voting Authority</p>
+  </footer>
+
+</body>
+
+</html>

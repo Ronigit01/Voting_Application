@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Official Registration | Voting System</title>
+  <link href="/dist/output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body
+  class="min-h-screen bg-gradient-to-br from-green-800 to-slate-900 flex items-center justify-center font-sans px-4">
+
+  <div
+    class="bg-white/5 backdrop-blur-md text-white p-8 md:p-10 rounded-xl shadow-xl w-full max-w-5xl flex flex-col md:flex-row gap-8 md:gap-10">
+
+    <!-- Left Side Image -->
+    <div class="md:w-1/2 flex justify-center items-center">
+      <img
+        src="https://img.freepik.com/free-vector/flat-design-international-day-democracy-background-with-voting_23-2148607147.jpg?t=st=1744600328~exp=1744603928~hmac=8dc6e472c23ccc4f1ec5b6ab236a5d85d86c6f0c1233a64818ec62887458b615&w=826"
+        alt="Voting Illustration" class="w-full h-auto max-h-72 object-contain rounded-xl shadow-md">
+    </div>
+
+    <!-- Right Side Form -->
+    <div class="md:w-1/2">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center md:text-left">Citizen Registration</h2>
+
+      <form action="/signup/register" method="POST" class="space-y-4">
+        <div>
+          <label for="name" class="block mb-1 text-sm text-blue-300">Full Name</label>
+          <input type="text" id="name" name="name" required
+            class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+        </div>
+        <div>
+          <label for="age" class="block mb-1 text-sm text-blue-300">Age</label>
+          <input type="number" id="age" name="age" min="18" required
+            class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+        </div>
+        <div>
+          <label for="email" class="block mb-1 text-sm text-blue-300">Email Address</label>
+          <input type="email" id="email" name="email" required
+            class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+        </div>
+        <div>
+          <label for="mobile" class="block mb-1 text-sm text-blue-300">Mobile Number</label>
+          <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required
+            class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+        </div>
+        <div>
+          <label for="aadhar" class="block mb-1 text-sm text-blue-300">Aadhar Number</label>
+          <input type="text" id="aadhar" name="aadhar" minlength="12" maxlength="12" pattern="[0-9]{12}" required
+            class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+        </div>
+        <div>
+          <label for="password" class="block mb-1 text-sm text-blue-300">Password</label>
+          <input type="password" id="password" name="password" required
+            class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+        </div>
+
+        <div>
+          <span class="text-sm font-medium text-blue-300">Select Role</span>
+          <div class="flex gap-6 mt-2">
+            <label class="flex items-center gap-2">
+              <input type="radio" name="role" value="voter" required class="accent-blue-600"> Voter
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="role" value="admin" required class="accent-blue-600"> Admin
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <button type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded text-white font-semibold transition duration-300">
+            Register
+          </button>
+        </div>
+
+        <p class="text-sm mt-2 text-center">
+          Already registered?
+          <a href="/login" class="text-blue-400 hover:underline">Log in here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Login | Voting System</title>
+  <link href="/dist/output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body
+  class="min-h-screen bg-gradient-to-br from-green-800 to-slate-900 flex items-center justify-center px-4 font-sans">
+
+  <div
+    class="bg-white/5 backdrop-blur-md text-white p-8 md:p-10 rounded-xl shadow-xl w-full max-w-4xl flex flex-col md:flex-row gap-8">
+
+    <!-- Left Side Image -->
+    <div class="md:w-1/2 flex justify-center items-center">
+      <img
+        src="https://img.freepik.com/free-vector/secure-login-concept-illustration_114360-7893.jpg?t=st=1716619770~exp=1716623370~hmac=401da1629e7e1c6cd9d2c4c3b25749deec083506d538f6e93b0f3a80868ccfe0&w=740"
+        alt="Secure Login Illustration" class="w-full max-w-xs md:max-w-sm object-contain rounded-2xl shadow-lg" />
+    </div>
+
+    <!-- Right Side Form -->
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold mb-6 text-center md:text-left">Secure Login</h2>
+
+      <form action="/login/user-login" method="POST" class="space-y-5">
+        <div>
+          <label for="aadhar" class="block mb-1 text-sm text-blue-300">Aadhar Number</label>
+          <input type="text" id="aadhar" name="aadhar" minlength="12" maxlength="12" required
+            placeholder="Enter your 12-digit Aadhar"
+            class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label for="password" class="block mb-1 text-sm text-blue-300">Password</label>
+          <input type="password" id="password" name="password" required placeholder="Enter your password"
+            class="w-full bg-white/10 border border-white/20 rounded px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+
+
+
+        <div class="text-sm mt-1">
+          Not a user? <a href="/signup" class="text-blue-400 hover:underline">Sign up now</a>
+        </div>
+
+        <div class="pt-4">
+          <button type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded text-white font-semibold transition duration-300">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
