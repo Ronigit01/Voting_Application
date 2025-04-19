@@ -22,10 +22,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/signup", signupRouter)
-
 app.use("/login", loginRouter)
-app.use("/profile", profileRouter)
 
+app.use("/profile", profileRouter)
 app.use("/candidates", candidateRouter);
 app.use("/vote", votingRouter);
 
